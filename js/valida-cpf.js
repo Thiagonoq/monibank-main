@@ -1,9 +1,7 @@
 export default function ehUmCPF(campo) {
     const cpf = campo.value.replace(/\.|-/g, "");
     if(validaNumerosRepetidos(cpf) || validaPrimeiroDigito(cpf) ||validaSegundoDigito(cpf)) {
-        console.log("Esse CPF Não Existe!");
-    } else {
-        console.log("Esse CPF existe!");
+        campo.setCustomValidity(' ');//habilita o erro para que a linha 68 do script.js atualize o valor. (Não faz diferença a mensagem dentro das '', pois a outra fórmula vai atualizar esse parametro.)
     }
 }
 
